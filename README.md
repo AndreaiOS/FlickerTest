@@ -14,15 +14,15 @@ Create a project in Swift with the following requirements:
 
 Extras:
 * Pull to refresh
-
-Create a few unit/UI tests.
-Make use of any iOS libraries you like.
+* Create a few unit/UI tests.
+* Make use of any iOS libraries you like.
 
 The main criteria is the code structure / quality.
 Code test coverage is not important.
 There should be some basic styling - positioning, margins, etc. but this is not an important aspect.
 
 Use the following API for content:
+
 https://api.flickr.com/services/feeds/photos_public.gne?format=json&lang=en-us&nojsoncallback=1
 
 If parsing errors occur just show an error in a popup
