@@ -19,17 +19,18 @@ class FlickerDeserializer {
     var delegate: FlickerDeserializerDelegate?
 
     func deserializeObjects(data: NSData) {
-        var jsonDictionary: [String:AnyObject]
-        var items: [[String:AnyObject]]
+        let jsonString = self.convertDataToString(data)
+        var jsonDictionary = convertStringToDictionary(jsonString)
+        let items = (jsonDictionary!["items"] as? [[String:AnyObject]])!
 
-        //Converts data to String to remove a sometimes wrong escape sequence
+        self.dictionaryToObject(items)
+    }
+
+    func convertDataToString(data: NSData) -> String {
         var dataString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
         dataString = dataString?.stringByReplacingOccurrencesOfString("\\\'", withString: "")
 
-        jsonDictionary = convertStringToDictionary(dataString! as String)!
-        items = (jsonDictionary["items"] as? [[String:AnyObject]])!
-
-        self.dictionaryToObject(items)
+        return (dataString! as String)
     }
 
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
