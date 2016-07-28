@@ -9,7 +9,7 @@ import Foundation
 // MARK: FlickerNetworkingDelegate
 
 protocol FlickerNetworkingDelegate {
-    func dataDownloaded(jsonString: NSString)
+    func dataDownloaded(data: NSData)
     func dataDownloadedError(error: NSError)
 }
 
@@ -44,10 +44,7 @@ class FlickerNetworking {
                 return
             }
 
-            var dataString = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String
-            dataString = dataString?.stringByReplacingOccurrencesOfString("\\\'", withString: "")
-
-            self.delegate!.dataDownloaded(dataString!)
+            self.delegate!.dataDownloaded(data!)
         }
         task.resume()
     }

@@ -65,8 +65,8 @@ class FlickerController {
 
 extension FlickerController: FlickerNetworkingDelegate {
 
-    func dataDownloaded(jsonString: NSString) {
-        deserializer.deserializeObjects(jsonString)
+    func dataDownloaded(data: NSData) {
+        deserializer.deserializeObjects(data)
     }
 
     func dataDownloadedError(error: NSError) {

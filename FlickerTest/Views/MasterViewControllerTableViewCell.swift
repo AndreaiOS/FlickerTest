@@ -26,6 +26,7 @@ class MasterViewControllerTableViewCell: UITableViewCell {
     func setUpCellWithObject(object: FlickerObject) {
         self.title?.text = object.title
         self.date?.text = object.dateTaken
+        // Uses a framework for downloading and caching images
         self.flickerImage.kf_setImageWithURL(NSURL(string: object.mediaString)!, placeholderImage: UIImage(named:"Placeholder"))
 
     }
