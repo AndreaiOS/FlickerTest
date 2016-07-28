@@ -27,9 +27,9 @@ class FlickerController {
         deserializer.delegate = self
         networking.delegate = self
 
-        self.addObservers()
+        addObservers()
 
-        self.reload()
+        reload()
     }
 
     func reload() {
@@ -51,7 +51,7 @@ class FlickerController {
     // MARK: Notification Selectors
 
     @objc func reloadNotification(notification: NSNotification) {
-        self.reload()
+        reload()
     }
 
 
@@ -70,7 +70,6 @@ extension FlickerController: FlickerNetworkingDelegate {
     }
 
     func dataDownloadedError(error: NSError) {
-        print("Networking Error: \(error.localizedDescription)")
         NSNotificationCenter.defaultCenter().postNotificationName("ErrorNotification", object: nil)
     }
 }

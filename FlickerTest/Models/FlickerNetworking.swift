@@ -24,10 +24,6 @@ class FlickerNetworking {
         url = NSURL(string: urlString)!
     }
 
-    /**
-     Fetch data from Flickr API
-
-     */
     func fetchData() {
         let session = NSURLSession.sharedSession()
 

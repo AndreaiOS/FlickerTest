@@ -19,7 +19,7 @@ class FlickerDeserializer {
     var delegate: FlickerDeserializerDelegate?
 
     func deserializeObjects(data: NSData) {
-        let jsonString = self.convertDataToString(data)
+        let jsonString = convertDataToString(data)
         var jsonDictionary = convertStringToDictionary(jsonString)
         let items = (jsonDictionary!["items"] as? [[String:AnyObject]])!
 
@@ -56,6 +56,6 @@ class FlickerDeserializer {
             flickerObjects.append(singleObject)
         }
 
-        self.delegate!.objectDeserialized(flickerObjects)
+        delegate!.objectDeserialized(flickerObjects)
     }
 }

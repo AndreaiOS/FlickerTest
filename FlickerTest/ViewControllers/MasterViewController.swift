@@ -23,8 +23,8 @@ class MasterViewController: UIViewController {
         tableView.dataSource = dataSource
         tableView.delegate = delegate
 
-        self.addObservers()
-        self.setRefreshControl()
+        addObservers()
+        setRefreshControl()
     }
 
     func setRefreshControl() {
