@@ -12,8 +12,7 @@ class FlickerObject {
     var mediaString: String = ""
     var dateFormatted: String = ""
 
-    var dateTaken: String
-        {
+    var dateTaken: String {
         get {
             return self.dateFormatted
         }
