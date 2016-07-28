@@ -1,6 +1,8 @@
 Flicker test app (Flickr API)
 ===========================
 
+Clone, open FlickerTest.xcworkspace and run
+
 ## Sample project requirements
 
 Create a project in Swift with the following requirements:
