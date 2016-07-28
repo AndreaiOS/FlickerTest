@@ -5,12 +5,12 @@ Flicker test app (Flickr API)
 
 Create a project in Swift with the following requirements:
 
-Single screen project using an appropriate architecture.
-Translucent navigation bar at the top of the screen.
-Each row should have: 
-* an image (item media), 
-* a title (item title) 
-* subtitle (item date taken in human friendly format like 2 days ago)
+* Single screen project using an appropriate architecture.
+* Translucent navigation bar at the top of the screen.
+* Each row should have: 
+    * an image (item media), 
+    * a title (item title) 
+    * subtitle (item date taken in human friendly format like 2 days ago)
 
 Extras:
 * Pull to refresh
