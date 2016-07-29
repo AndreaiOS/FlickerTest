@@ -23,6 +23,7 @@
 		A5E96EF91D481ED800DA8DE1 /* MasterViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E96EF81D481ED800DA8DE1 /* MasterViewControllerTableViewCell.swift */; };
 		A5E96F001D4A9A0A00DA8DE1 /* MasterViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E96EFF1D4A9A0A00DA8DE1 /* MasterViewControllerDataSource.swift */; };
 		B8B7B3CA5E85121906C6B3D2 /* Pods_FlickerTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5376F20C61E91409F915D6F8 /* Pods_FlickerTest.framework */; };
+		BA5CA94C1D4B4C8C00518B69 /* StandardNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CA94B1D4B4C8C00518B69 /* StandardNotifications.swift */; };
 		E72EF00BF19E49BFD49F6D10 /* Pods_FlickerTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106385DE96ECA6AC766AC4BE /* Pods_FlickerTestUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		A5E96EFF1D4A9A0A00DA8DE1 /* MasterViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewControllerDataSource.swift; sourceTree = "<group>"; };
 		B1042579F87244A967C36D10 /* Pods-FlickerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerTest/Pods-FlickerTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A02B54D3DC7055F7DF44D9 /* Pods-FlickerTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerTestTests/Pods-FlickerTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA5CA94B1D4B4C8C00518B69 /* StandardNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardNotifications.swift; sourceTree = "<group>"; };
 		BAC6E7FE4F39219868E772D3 /* Pods-FlickerTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerTestUITests/Pods-FlickerTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CABFFDDB062783D66998C77A /* Pods-FlickerTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerTestTests/Pods-FlickerTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3017695D825C4B8B7A20942 /* Pods-FlickerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerTest/Pods-FlickerTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E96EE71D481A3800DA8DE1 /* FlickerObject.swift */,
+				BA5CA94B1D4B4C8C00518B69 /* StandardNotifications.swift */,
 				A5E96EEA1D481DB400DA8DE1 /* FlickerDeserializer.swift */,
 				A5E96EEC1D481DD700DA8DE1 /* FlickerNetworking.swift */,
 			);
@@ -521,6 +524,7 @@
 				A5E96EF61D481E7C00DA8DE1 /* MasterViewController.swift in Sources */,
 				A5E96EF91D481ED800DA8DE1 /* MasterViewControllerTableViewCell.swift in Sources */,
 				A5E96EF01D481E1700DA8DE1 /* FlickerController.swift in Sources */,
+				BA5CA94C1D4B4C8C00518B69 /* StandardNotifications.swift in Sources */,
 				A5E96EED1D481DD700DA8DE1 /* FlickerNetworking.swift in Sources */,
 				A5E96EE81D481A3800DA8DE1 /* FlickerObject.swift in Sources */,
 				A5E96EAB1D48181E00DA8DE1 /* AppDelegate.swift in Sources */,

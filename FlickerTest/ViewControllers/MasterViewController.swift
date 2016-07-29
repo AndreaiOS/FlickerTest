@@ -35,19 +35,19 @@ class MasterViewController: UIViewController {
     }
 
     func refresh(sender:AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("ReloadData",
+        NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ReloadData.rawValue,
                                                                   object: nil)
     }
 
     func addObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(MasterViewController.showError(_:)),
-                                                         name:"ShowErrorNotification",
+                                                         name:StandardNotifications.ShowErrorNotification.rawValue,
                                                          object: nil)
 
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(MasterViewController.dataReady(_:)),
-                                                         name:"DataReady",
+                                                         name:StandardNotifications.DataReady.rawValue,
                                                          object: nil)
     }
 
@@ -74,7 +74,7 @@ class MasterViewController: UIViewController {
 
         let OKAction = UIAlertAction(title: "Retry", style: .Default) {
             (action: UIAlertAction!) in
-            NSNotificationCenter.defaultCenter().postNotificationName("ReloadData",
+            NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ReloadData.rawValue,
                                                                       object: nil)
         }
         alertController.addAction(OKAction)

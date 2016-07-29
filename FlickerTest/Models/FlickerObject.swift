@@ -17,7 +17,6 @@ class FlickerObject {
             return self.dateFormatted
         }
         set {
-            //
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             let date = dateFormatter.dateFromString(newValue)
@@ -29,6 +28,7 @@ class FlickerObject {
             let flags = NSCalendarUnit.Day
             let components = calendar.components(flags, fromDate: date!, toDate: date2, options: [])
 
+            //Set item date in a human friendly format
             switch components.day {
                 case 0:
                     self.dateFormatted = ("Today")
