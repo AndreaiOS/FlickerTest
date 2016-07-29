@@ -30,25 +30,33 @@ class MasterViewController: UIViewController {
     func setRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(MasterViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self,
+                                 action: #selector(MasterViewController.refresh(_:)),
+                                 forControlEvents: UIControlEvents.ValueChanged)
+
         tableView.addSubview(refreshControl)
     }
 
-    func refresh(sender:AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ReloadData.rawValue,
-                                                                  object: nil)
+    func refresh(sender: AnyObject) {
+        NSNotificationCenter
+            .defaultCenter()
+            .postNotificationName(StandardNotifications.ReloadData.rawValue, object: nil)
     }
 
     func addObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(MasterViewController.showError(_:)),
-                                                         name:StandardNotifications.ShowErrorNotification.rawValue,
-                                                         object: nil)
+        NSNotificationCenter
+            .defaultCenter()
+            .addObserver(self,
+                         selector: #selector(MasterViewController.showError(_:)),
+                         name:StandardNotifications.ShowErrorNotification.rawValue,
+                         object: nil)
 
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(MasterViewController.dataReady(_:)),
-                                                         name:StandardNotifications.DataReady.rawValue,
-                                                         object: nil)
+        NSNotificationCenter
+            .defaultCenter()
+            .addObserver(self,
+                         selector: #selector(MasterViewController.dataReady(_:)),
+                         name:StandardNotifications.DataReady.rawValue,
+                         object: nil)
     }
 
     // MARK: Notification Selectors
@@ -74,11 +82,12 @@ class MasterViewController: UIViewController {
 
         let OKAction = UIAlertAction(title: "Retry", style: .Default) {
             (action: UIAlertAction!) in
-            NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ReloadData.rawValue,
-                                                                      object: nil)
+            NSNotificationCenter
+                .defaultCenter()
+                .postNotificationName(StandardNotifications.ReloadData.rawValue, object: nil)
         }
         alertController.addAction(OKAction)
-        
+
         dispatch_async(dispatch_get_main_queue(), {
             self.presentViewController(alertController, animated: true, completion:nil)
         })

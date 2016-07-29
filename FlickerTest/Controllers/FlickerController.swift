@@ -37,13 +37,15 @@ class FlickerController {
     }
 
     func addObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(FlickerController.showError(_:)),
+        NSNotificationCenter
+            .defaultCenter()
+            .addObserver(self, selector: #selector(FlickerController.showError(_:)),
                                                          name:StandardNotifications.Error.rawValue,
                                                          object: nil)
 
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: #selector(FlickerController.reloadNotification(_:)),
+        NSNotificationCenter
+            .defaultCenter()
+            .addObserver(self, selector: #selector(FlickerController.reloadNotification(_:)),
                                                          name:StandardNotifications.ReloadData.rawValue,
                                                          object: nil)
     }
@@ -55,7 +57,9 @@ class FlickerController {
     }
 
     @objc func showError(notification: NSNotification) {
-        NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ShowErrorNotification.rawValue,
+        NSNotificationCenter
+            .defaultCenter()
+            .postNotificationName(StandardNotifications.ShowErrorNotification.rawValue,
                                                                   object: nil)
     }
 }
@@ -69,7 +73,9 @@ extension FlickerController: FlickerNetworkingDelegate {
     }
 
     func dataDownloadedError(error: NSError) {
-        NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.Error.rawValue, object: nil)
+        NSNotificationCenter
+            .defaultCenter()
+            .postNotificationName(StandardNotifications.Error.rawValue, object: nil)
     }
 }
 
@@ -79,6 +85,8 @@ extension FlickerController: FlickerDeserializerDelegate {
 
     func objectDeserialized(objects: [FlickerObject]) {
         flickerObjects = objects
-        NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.DataReady.rawValue, object: flickerObjects)
+        NSNotificationCenter
+            .defaultCenter()
+            .postNotificationName(StandardNotifications.DataReady.rawValue, object: flickerObjects)
     }
 }

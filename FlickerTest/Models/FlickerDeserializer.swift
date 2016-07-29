@@ -11,6 +11,7 @@ import Foundation
 protocol FlickerDeserializerDelegate {
     func objectDeserialized(objects: [FlickerObject])
 }
+
 // MARK: FlickerDeserializer
 
 class FlickerDeserializer {
@@ -39,7 +40,9 @@ class FlickerDeserializer {
             do {
                 return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
             } catch _ as NSError {
-                NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ShowErrorNotification.rawValue, object: nil)
+                NSNotificationCenter
+                    .defaultCenter()
+                    .postNotificationName(StandardNotifications.ShowErrorNotification.rawValue, object: nil)
             }
         }
         return nil
