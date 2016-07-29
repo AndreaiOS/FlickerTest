@@ -21,6 +21,7 @@ class FlickerDeserializer {
     func deserializeObjects(data: NSData) {
         let jsonString = convertDataToString(data)
         var jsonDictionary = convertStringToDictionary(jsonString)
+        
         let items = (jsonDictionary!["items"] as? [[String:AnyObject]])!
 
         self.dictionaryToObject(items)
