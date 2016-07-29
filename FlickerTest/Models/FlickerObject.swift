@@ -39,4 +39,11 @@ class FlickerObject {
             }
         }
     }
+
+    init(title: String, mediaString: String, dateTaken: String) {
+        self.title = title
+        self.mediaString = mediaString
+        self.dateTaken = dateTaken
+    }
+
 }

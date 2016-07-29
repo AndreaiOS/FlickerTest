@@ -21,7 +21,7 @@ class FlickerDeserializer {
     func deserializeObjects(data: NSData) {
         let jsonString = convertDataToString(data)
         var jsonDictionary = convertStringToDictionary(jsonString)
-        
+
         let items = (jsonDictionary!["items"] as? [[String:AnyObject]])!
 
         self.dictionaryToObject(items)
@@ -48,15 +48,13 @@ class FlickerDeserializer {
     func dictionaryToObject(JSONDictionary: [[String:AnyObject]]) {
         flickerObjects.removeAll()
 
-        for object in JSONDictionary {
-            let singleObject: FlickerObject = FlickerObject()
-            singleObject.title = (object["title"] as? String)!
-            singleObject.mediaString = (object["media"]!["m"] as? String)!
-            singleObject.dateTaken = (object["date_taken"] as? String)!
-
-            flickerObjects.append(singleObject)
-        }
-
-        delegate!.objectDeserialized(flickerObjects)
+        let flickerObjectsMapped: [FlickerObject] = JSONDictionary.map({
+             FlickerObject(title: ($0["title"] as? String)!,
+                     mediaString: ($0["media"]!["m"] as? String)!,
+                       dateTaken: ($0["date_taken"] as? String)!
+            )
+            }
+        )
+        delegate!.objectDeserialized(flickerObjectsMapped)
     }
 }

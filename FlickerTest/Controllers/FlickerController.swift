@@ -54,7 +54,6 @@ class FlickerController {
         reload()
     }
 
-
     @objc func showError(notification: NSNotification) {
         NSNotificationCenter.defaultCenter().postNotificationName(StandardNotifications.ShowErrorNotification.rawValue,
                                                                   object: nil)
